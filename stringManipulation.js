@@ -2,18 +2,17 @@
 document.write("<h3>Capitalizing Words</h3>");
 
 
-let str = prompt("enter here : ");
- 
-  function capitalizeWords() {
-    let words = str.split(" ");
+
+  function capitalizeWords(givenString) {
+    let words = givenString.split(" ");
 	console.log(words);
     for (let i = 0; i < words.length; i++) {
-        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
     }
     document.write(words.join(" "));
 }
 
-capitalizeWords();
+capitalizeWords("jaY shRee rAm");
  
 document.write("<hr>");
 document.write("<br>");
