@@ -10,6 +10,7 @@ document.write("<h3>Capitalizing Words</h3>");
         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
     }
     document.write(words.join(" "));
+	console.log(words.join(" "));
 }
 
 capitalizeWords("jaY shRee rAm");
@@ -34,7 +35,7 @@ function capitalizeAll(givenString){
 	document.write(desiredString);
 
 }
-capitalizeAll("krushna lavhare");
+capitalizeAll("onkar londhe");
 
  
 
@@ -113,14 +114,25 @@ document.write(densityCal);
 
 
 
-// document.write("<hr>");
-// document.write("<br>");
+document.write("<hr>");
+document.write("<br>");
 
 
-// document.write("<h3>File Extension Extraction</h3>");
+document.write("<h3>File Extension Extraction</h3>");
 
+function getExt(file){
+	
+	
+	
+	if(file.includes(".")){
+		let fileExt = file.split(".").pop();
+		return fileExt;
+ 	}else{
+		return "Null";
+	}
+}
  
- 
+document.write(getExt("index.html"));
 
 document.write("<hr>");
 document.write("<br>");
@@ -133,19 +145,11 @@ document.write("<br>");
 document.write("<h3>Removing Whitespace</h3>");
 
 function removeWhitespace(givenString){
-	let convertingStringIntoArray = givenString.split(" ");
- 	let noWhiteSpace = [];
-	for(let i=0; i<convertingStringIntoArray.length; i++){
-		if(convertingStringIntoArray!=" "){
-			noWhiteSpace.push(convertingStringIntoArray[i]);
-		}
-	}
-	
-	let originalStr = noWhiteSpace.join(" ");
-	document.write(originalStr);
+	 let noWhiteSpace = givenString.replace(/\s/g, ""); 
+	 return noWhiteSpace;
 }
 
- removeWhitespace(" hello guy's ");
+document.write(removeWhitespace(" he  llo guy's "));
  
 document.write("<hr>");
 document.write("<br>");
@@ -240,23 +244,24 @@ document.write("<br>");
 
 document.write("<h3>String Masking</h3>");
 
-// function maskString(givenString){
+function maskString(givenString, addStars){
 	
-	// let slice = givenString.split();
+	let slice = givenString.slice(addStars);
+	
+	console.log(slice);
 	 
-	// for(i=0; i<slice.length; i++){
-		// slice = slice + "*";
-	// }
+	for(i=0; i<addStars; i++){
+		slice =  "*"+ slice;
+	}
 	
-	// document.write(slice);
-// }
+	document.write(slice);
+}
 
-// maskString("97605093");
+maskString("976050938473",8);
 
 
 document.write("<hr>");
 document.write("<br>");
-
 
 
 
